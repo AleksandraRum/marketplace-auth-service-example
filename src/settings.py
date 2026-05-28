@@ -5,11 +5,11 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     database_url: str | None = None
-    postgres_host: str
-    postgres_database_name: str
-    postgres_password: str
-    postgres_port: int
-    postgres_username: str
+    postgres_host: str | None = None
+    postgres_database_name: str | None = None
+    postgres_password: str | None = None
+    postgres_port: int | None = None
+    postgres_username: str | None = None
 
     jwt_secret: str = "change-me"
     jwt_algorithm: str = "HS256"
